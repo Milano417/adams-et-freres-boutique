@@ -1,0 +1,60 @@
+/* Données partagées : site public et espace administrateur */
+const IMG = 'images/';
+const ICONS = {
+  phone: '<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/>',
+  mobile: '<rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/>', tv: '<rect x="2" y="6" width="20" height="13" rx="2"/><path d="m17 2-5 4-5-4M8 22h8"/>',
+  fridge: '<rect x="5" y="2" width="14" height="20" rx="2"/><path d="M5 10h14M9 6v1M9 14v3"/>', snow: '<path d="M12 2v20M4.9 7l14.2 10M4.9 17 19.1 7M9 3.5l3 2.5 3-2.5M9 20.5l3-2.5 3 2.5"/>',
+  wash: '<rect x="3" y="2" width="18" height="20" rx="2"/><circle cx="12" cy="14" r="5"/><path d="M7 6h.01M11 6h6"/>', audio: '<path d="M3 14v-2a9 9 0 0 1 18 0v2"/><path d="M21 15a2 2 0 0 1-2 2h-1v-6h1a2 2 0 0 1 2 2zM3 15a2 2 0 0 0 2 2h1v-6H5a2 2 0 0 0-2 2z"/>',
+  kitchen: '<path d="M6 13a4 4 0 0 1 1-7.9A5 5 0 0 1 17 5a4 4 0 0 1 1 8v7H6z"/><path d="M6 17h12"/>', chat: '<path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2-5.5A8.4 8.4 0 1 1 21 11.5z"/>',
+  pin: '<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>'
+};
+const ic = (n, s = 22) => `<svg class="i" width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[n]}</svg>`;
+
+const DEF_CONFIG = {
+  storeName: "ADAM'S ET FRÈRES", tagline: "La référence en téléphonie & électroménager à Daoukro",
+  primaryPhone: "+225 07 07 10 34 97", secondaryPhone: "+225 05 55 43 98 24", whatsappNumber: "2250707103497",
+  address: "À côté de la station Total, sur la voie du collège Mouahé", city: "Daoukro", region: "Région de l'Iffou, Côte d'Ivoire",
+  openingHoursWeek: "Du Lundi au Samedi : 07h30 – 20h30", openingHoursSunday: "Dimanche : 09h00 – 18h00",
+  googleMapsUrl: "https://maps.google.com/?q=Daoukro+Cote+d'Ivoire",
+  announcementBanner: "SPÉCIAL PROMO DAOUKRO : Réductions exceptionnelles sur les smartphones et téléviseurs avec garantie constructeur certifiée !",
+  showAnnouncement: true
+};
+const CATS = [
+  { id: 'smartphones', name: 'Smartphones & Mobiles', icon: ic('mobile', 26), d: 'iPhone, Samsung Galaxy, Tecno, Infinix, Xiaomi, Google Pixel 100% certifiés originaux.' },
+  { id: 'televiseurs', name: 'Téléviseurs & Smart TV', icon: ic('tv', 26), d: 'Smart TV 4K UHD, Google TV, Android TV de 32 à 75 pouces (Hisense, Nasco, Samsung).' },
+  { id: 'refrigerateurs', name: 'Réfrigérateurs & Congélateurs', icon: ic('fridge', 26), d: "Combinés, deux battants, congélateurs horizontaux à économie d'énergie Inverter." },
+  { id: 'climatiseurs', name: 'Climatiseurs & Ventilation', icon: ic('snow', 26), d: 'Split 1 CV, 1.5 CV, 2 CV Inverter basse consommation et brasseurs d\'air performants.' },
+  { id: 'lavage', name: 'Machines à Laver', icon: ic('wash', 26), d: 'Lave-linges automatiques et semi-automatiques 7kg à 12kg avec essorage puissant.' },
+  { id: 'accessoires', name: 'Accessoires & Audio', icon: ic('audio', 26), d: 'Chargeurs rapides originaux, AirPods, écouteurs, câbles certifiés, pochettes & powerbanks.' },
+  { id: 'electromenager', name: 'Petit Électroménager', icon: ic('kitchen', 26), d: 'Micro-ondes, mixeurs blenders, fers à repasser, bouilloires inox, cuiseurs à riz.' }
+];
+// [id, nom, catégorie, marque, prix, ancien prix, promo, populaire, nouveau, stock, image, garantie, description]
+const P = (a) => ({ id: a[0], name: a[1], category: a[2], brand: a[3], price: a[4], originalPrice: a[5], isPromo: a[6], isPopular: a[7], isNew: a[8], inStock: true, stockCount: a[9], image: IMG + a[10], warranty: a[11], description: a[12], specs: a[13] || {} });
+const DEF_PRODUCTS = [
+  P(["infinix-note-40-pro-plus", "Infinix Note 40 Pro+ 5G (Cyber Vert Électrique - 256 Go / 24 Go)", "smartphones", "Infinix", 195000, 225000, 1, 1, 1, 12, "infinix_gt_smartphone.jpg", "14 mois de garantie officielle Carlcare", "Le fleuron d'Infinix en finition Vert Électrique. Charge All-Round FastCharge 100W + MagCharge sans fil 20W, écran incurvé AMOLED 120Hz et caméra 108 MP OIS. 100% original, garanti Carlcare à Daoukro.", { "Stockage": "256 Go ROM", "RAM": "24 Go (12 Go + 12 Go étendu)", "Charge": "100W filaire + 20W sans fil MagCharge", "Écran": "6.78'' 3D-Curved AMOLED 120Hz", "Appareil photo": "108 MP OIS Super-Zoom 3X", "Son": "Double haut-parleurs JBL Hi-Res" }]),
+  P(["tecnocamon-50-pro", "Tecno Camon 50 Pro (Original Garanti)", "smartphones", "Tecno", 185000, 215000, 1, 1, 1, 8, "product_tecnocamon_pro.jpg", "13 mois de garantie officielle Carlcare", "Capteur photo Sony Ultra-HD, 256 Go de stockage et 16 Go de RAM étendue. Produit 100% original avec gravure officielle Tecno, scellé d'usine.", { "Stockage": "256 Go ROM", "RAM": "16 Go (8+8 Go étendu)", "Appareil photo": "50 MP Sony triple capteur", "Batterie": "5000 mAh + charge rapide 45W", "Réseau": "4G / 5G double SIM", "Écran": "6.78'' AMOLED 120Hz" }]),
+  P(["iphone-15-pro-max", "Apple iPhone 15 Pro Max 256 Go", "smartphones", "Apple", 840000, 910000, 1, 1, 0, 4, "iphone15_box.jpg", "12 mois de garantie constructeur Apple", "Finition titane, puce A17 Pro, zoom optique 5x. Appareil scellé d'origine ou certifié authentique chez ADAM'S ET FRÈRES.", { "Stockage": "256 Go", "Châssis": "Titane grade aéronautique", "Puce": "A17 Pro Bionic", "Écran": "Super Retina XDR OLED 6.7'' ProMotion" }]),
+  P(["samsung-galaxy-a55", "Samsung Galaxy A55 5G (256 Go / 8 Go)", "smartphones", "Samsung", 245000, 275000, 1, 1, 0, 10, "product_tecnocamon_pro.jpg", "24 mois de garantie officielle Samsung", "Le Galaxy A55 5G : écran Super AMOLED fluide, châssis métal et mises à jour logicielles de longue durée.", { "Stockage": "256 Go", "RAM": "8 Go", "Réseau": "5G" }]),
+  P(["smart-tv-hisense-55", "Hisense 55'' Smart TV 4K UHD Frameless (55A6K)", "televiseurs", "Hisense", 260000, 295000, 1, 1, 0, 6, "product_smarttv_uhd.jpg", "12 mois de garantie locale avec facture", "Smart TV 4K UHD sans bords, applications intégrées, image nette pour le football et les films.", { "Taille": "55 pouces", "Résolution": "4K UHD", "Système": "Smart TV" }]),
+  P(["smart-tv-nasco-43", "Nasco 43'' Smart LED Android TV Full HD", "televiseurs", "Nasco", 155000, 175000, 1, 0, 0, 9, "produits/smart-tv-nasco-43.jpg", "12 mois de garantie", "Android TV 43 pouces Full HD, accès YouTube et applications de streaming.", { "Taille": "43 pouces", "Résolution": "Full HD", "Système": "Android TV" }]),
+  P(["refrigerateur-combine-inverter", "Réfrigérateur Combiné Smart Inverter 320L", "refrigerateurs", "Divers", 295000, 335000, 1, 1, 0, 5, "product_refrigerator_inverter.jpg", "24 mois de garantie compresseur", "Combiné Inverter 320 litres à faible consommation, adapté aux coupures et variations de courant.", { "Capacité": "320 L", "Technologie": "Inverter" }]),
+  P(["congelateur-coffre-200l", "Congélateur Coffre Tropicalisé 200L Économique", "refrigerateurs", "Divers", 185000, 205000, 0, 1, 0, 7, "product_refrigerator_inverter.jpg", "12 mois de garantie", "Congélateur horizontal tropicalisé 200 litres, économique et robuste.", { "Capacité": "200 L", "Type": "Coffre horizontal" }]),
+  P(["climatiseur-split-1-5-cv", "Climatiseur Split 1.5 CV Inverter Éco Turbo Cool", "climatiseurs", "Divers", 210000, 235000, 1, 1, 0, 6, "hero_adams_store.jpg", "12 mois de garantie totale", "Split 1.5 CV Inverter, refroidissement rapide et basse consommation.", { "Puissance": "1.5 CV", "Technologie": "Inverter" }]),
+  P(["machine-a-laver-automatique-8kg", "Machine à Laver Automatique 8 kg Chargement Frontal", "lavage", "Divers", 240000, 270000, 1, 0, 0, 4, "hero_adams_store.jpg", "12 mois de garantie", "Lave-linge automatique 8 kg à chargement frontal avec essorage puissant.", { "Capacité": "8 kg", "Chargement": "Frontal" }]),
+  P(["tecno-spark-50", "Tecno Spark 50 (Original avec Microtexture)", "smartphones", "Tecno", 95000, 105000, 1, 1, 0, 15, "product_tecnocamon_pro.jpg", "13 mois de garantie Carlcare", "Smartphone d'entrée de gamme fiable, original avec microtexture officielle.", { "Réseau": "4G" }]),
+  P(["iphone-xr-64gb", "Apple iPhone XR 64 Go (Reconditionné Grade A+)", "smartphones", "Apple", 135000, 150000, 1, 1, 0, 12, "iphone_xr.jpg", "3 mois de garantie directe en boutique", "iPhone XR reconditionné Grade A+, testé et garanti en boutique.", { "Stockage": "64 Go", "État": "Reconditionné Grade A+" }]),
+  P(["infinix-hot-40-pro", "Infinix Hot 40 Pro (256 Go / 16 Go)", "smartphones", "Infinix", 135000, 145000, 0, 1, 0, 9, "infinix_electric_hero.jpg", "12 mois de garantie", "Infinix Hot 40 Pro, 256 Go de stockage et 16 Go de RAM étendue.", { "Stockage": "256 Go", "RAM": "16 Go" }]),
+  P(["micro-ondes-20l-digital", "Four Micro-ondes Numérique 20 Litres avec Gril", "electromenager", "Divers", 55000, 65000, 1, 0, 0, 8, "hero_adams_store.jpg", "12 mois de garantie", "Micro-ondes numérique 20 litres avec fonction gril.", { "Capacité": "20 L" }]),
+  P(["blender-mixeur-inox-2en1", "Mixeur Blender Inox 2-en-1 avec Moulin à Café / Épices", "electromenager", "Divers", 25000, 30000, 1, 1, 0, 14, "hero_adams_store.jpg", "12 mois de garantie", "Blender inox 2-en-1 avec moulin à café et épices.", { "Matière": "Inox" }]),
+  P(["chargeur-rapide-67w-original", "Chargeur Rapide Original SuperCharge 67W + Câble Type-C", "accessoires", "Original", 15000, 18000, 0, 1, 0, 25, "product_tecnocamon_pro.jpg", "6 mois de garantie échange", "Chargeur rapide original 67W avec câble Type-C.", { "Puissance": "67W" }]),
+  P(["powerbank-20000mah-fastcharge", "Power Bank Haute Capacité 20 000 mAh avec Écran Digital", "accessoires", "Oraimo", 22000, 26000, 1, 1, 0, 18, "product_tecnocamon_pro.jpg", "12 mois de garantie Oraimo", "Batterie externe 20 000 mAh avec écran digital de charge.", { "Capacité": "20 000 mAh" }])
+];
+const REVIEWS = [
+  ["Kouassi Jean-Marc", "Quartier Baoulékro, Daoukro", "J'ai acheté mon Tecno Camon directement chez Adam's. Le patron m'a montré les signes d'authenticité pour éviter les contrefaçons du marché. Téléphone scellé, rapide et garanti Carlcare. Je recommande les yeux fermés !", "Il y a 3 jours", "Tecno Camon 50 Pro"],
+  ["Awa Traoré", "Quartier Commerce, Daoukro", "Commande passée sur WhatsApp pour une Smart TV Hisense 55 pouces. Ils m'ont livré à domicile en moins de 45 minutes et ont même aidé à tester l'écran avec moi. Équipe très polie et professionnelle.", "Il y a 1 semaine", "Hisense 55'' Smart TV 4K"],
+  ["M. N'Goran Koffi", "Près du Lycée Moderne, Daoukro", "C'est la plus grande boutique fiable de Daoukro pour les téléphones et l'électroménager. Le réfrigérateur combiné fonctionne à merveille et consomme très peu. Le service après-vente est réel.", "Il y a 2 semaines", "Réfrigérateur Combiné Inverter"],
+  ["Yasmine Bamba", "Voie du Collège Mouahé, Daoukro", "Boutique bien située juste à côté de la station Total. Prix très corrects par rapport à Abidjan et accueil chaleureux de l'équipe d'Adam. Merci pour la promo sur l'iPhone !", "Il y a 3 semaines", "iPhone XR 64 Go"]
+];
+const TABS = [['accueil', 'Accueil'], ['boutique', 'Boutique'], ['promotions', 'Promotions'], ['categories', 'Catégories'], ['galerie', 'Galerie'], ['apropos', 'À propos'], ['contact', 'Contact']];
+const IMAGES = ['iphone15_box.jpg', 'iphone_xr.jpg', 'owner.jpg', 'infinix_gt_smartphone.jpg', 'infinix_electric_hero.jpg', 'product_tecnocamon_pro.jpg', 'product_smarttv_uhd.jpg', 'product_refrigerator_inverter.jpg', 'hero_adams_store.jpg'];
+const CFIELDS = [['storeName', 'Nom de la boutique'], ['tagline', 'Slogan'], ['primaryPhone', 'Téléphone principal'], ['secondaryPhone', 'Téléphone secondaire'], ['whatsappNumber', 'WhatsApp (chiffres, ex : 2250707103497)'], ['address', 'Adresse'], ['city', 'Ville'], ['region', 'Région'], ['openingHoursWeek', 'Horaires semaine'], ['openingHoursSunday', 'Horaires dimanche'], ['googleMapsUrl', 'Lien Google Maps'], ['announcementBanner', 'Bannière d\'annonce']];

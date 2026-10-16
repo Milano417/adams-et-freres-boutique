@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Espace administrateur · ADAM'S ET FRÈRES</title>
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body class="ad">
+<header class="ah"><div class="wrap ahb">
+  <div class="logo"><img src="images/logo.png" alt="Logo ADAM'S ET FRÈRES"><span>ADAM'S<small>Espace administrateur</small></span></div>
+  <div class="who" id="who" hidden><span id="whoMail"></span><button class="btn ghost sm" id="out" type="button">Déconnexion</button></div>
+</div></header>
+
+<main class="wrap">
+  <div class="note warn" id="demo" hidden><b>Mode démonstration.</b> Aucun serveur n'est connecté : les modifications restent dans ce navigateur et ne sont pas visibles par les clients. Mettez le site en ligne sur Vercel (voir GUIDE.md).</div>
+
+  <section class="lg" id="login" hidden>
+    <h1>Connexion</h1>
+    <p class="sub">Accès réservé à l'administrateur de la boutique.</p>
+    <form class="f" id="lf" autocomplete="on">
+      <input type="text" name="username" value="admin" autocomplete="username" hidden>
+      <label>Mot de passe administrateur<input type="password" id="pw" name="password" autocomplete="current-password" required></label>
+      <div class="err" id="lerr" role="alert"></div>
+      <button class="btn" type="submit" id="lbtn" style="justify-content:center">Se connecter</button>
+    </form>
+  </section>
+
+  <section id="dash" hidden>
+    <div class="tabs" role="tablist">
+      <button class="on" data-p="pp" type="button">Produits</button><button data-p="pc" type="button">Coordonnées</button><button data-p="ps" type="button">Sauvegarde</button><a href="index.html" target="_blank" rel="noopener">Voir le site ↗</a>
+    </div>
+
+    <div class="panel" id="pp">
+      <div class="bar">
+        <input type="search" id="sq" placeholder="Rechercher un produit…" aria-label="Rechercher">
+        <select id="sb" aria-label="Marque"></select>
+        <button class="btn" id="add" type="button">+ Ajouter un produit</button>
+      </div>
+      <p class="cnt" id="cnt"></p>
+      <div class="note" id="empty" hidden>La base est vide. Ouvrez l'onglet « Sauvegarde » puis cliquez sur « Importer le catalogue initial ».</div>
+      <div id="plist"></div>
+    </div>
+
+    <div class="panel" id="pc" hidden>
+      <h2>Coordonnées et annonce</h2>
+      <form class="f cfm" id="cf"></form>
+    </div>
+
+    <div class="panel" id="ps" hidden>
+      <h2>Sauvegarde et import</h2>
+      <div class="box"><h3>Catalogue initial</h3><p class="sub">Charge les produits fournis avec le site (prix de départ à vérifier). Les produits qui portent le même identifiant sont remplacés, les autres ne sont pas supprimés.</p><button class="btn ghost" id="seed" type="button">Importer le catalogue initial</button></div>
+      <div class="box"><h3>Sauvegarde</h3><p class="sub">Téléchargez une copie de tous les produits et des coordonnées (fichier JSON).</p><button class="btn ghost" id="exp" type="button">Télécharger la sauvegarde</button></div>
+      <div class="box"><h3>Restauration</h3><p class="sub">Choisissez un fichier de sauvegarde téléchargé plus tôt.</p><input type="file" id="imp" accept="application/json,.json"></div>
+    </div>
+  </section>
+</main>
+
+<dialog id="dlg">
+  <form class="f" id="pf">
+    <div class="dh2"><h2 id="dt">Ajouter un produit</h2><button type="button" class="x2" id="dx" aria-label="Fermer">✕</button></div>
+    <input type="hidden" name="id">
+    <label>Nom du produit<input name="name" required maxlength="160"></label>
+    <div class="two"><label>Marque<input name="brand" list="brl" required placeholder="ex : Samsung"></label><label>Série<input name="series" list="srl" placeholder="ex : Galaxy A"></label></div>
+    <datalist id="brl"></datalist><datalist id="srl"></datalist>
+    <div class="two"><label>Catégorie<select name="category" id="cat"></select></label><label>Garantie<input name="warranty" value="12 mois de garantie"></label></div>
+    <div class="two"><label>Prix (FCFA)<input name="price" type="number" min="0" step="500" required inputmode="numeric"></label><label>Ancien prix (FCFA, pour une promo)<input name="originalPrice" type="number" min="0" step="500" inputmode="numeric"></label></div>
+    <div class="two"><label>Stock<input name="stockCount" type="number" min="0" step="1" value="1" required inputmode="numeric"></label><label>Photo<input type="file" id="photo" accept="image/*"></label></div>
+    <img id="pv" alt="Aperçu de la photo" hidden>
+    <label>Description<textarea name="description" rows="3" maxlength="600"></textarea></label>
+    <div class="chk"><label><input type="checkbox" name="isPromo"> En promotion</label><label><input type="checkbox" name="isPopular"> Populaire</label><label><input type="checkbox" name="isNew"> Nouveau</label></div>
+    <div class="err" id="perr" role="alert"></div>
+    <div class="acts"><button class="btn ghost" type="button" id="cn">Annuler</button><button class="btn" type="submit" id="sv">Enregistrer</button></div>
+  </form>
+</dialog>
+<div class="toast" id="toast" role="status"></div>
+
+<script src="catalogue.js"></script>
+<script src="data.js"></script>
+<script type="module" src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adam's et Frères Daoukro - Téléphonie & Électroménager</title>
+<meta name="description" content="La référence en téléphonie et électroménager à Daoukro. Smartphones certifiés originaux, TV 4K, réfrigérateurs et split avec commande directe WhatsApp.">
+<meta name="keywords" content="boutique téléphone Daoukro, smartphone Daoukro, électroménager Daoukro, Adam's et Frères, téléviseur Daoukro, réfrigérateur Daoukro, climatiseur Daoukro">
+<meta property="og:type" content="website"><meta property="og:site_name" content="ADAM'S ET FRÈRES Daoukro">
+<meta property="og:title" content="Adam's et Frères Daoukro - Téléphonie & Électroménager"><meta property="og:locale" content="fr_CI">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ElectronicsStore","logo":"images/logo.png","image":"images/owner.jpg","name":"ADAM'S ET FRÈRES","telephone":"+2250707103497",
+"address":{"@type":"PostalAddress","streetAddress":"À côté de la station Total, voie du collège Mouahé","addressLocality":"Daoukro","addressRegion":"Iffou","addressCountry":"CI"},
+"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"07:30","closes":"20:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"18:00"}],
+"currenciesAccepted":"XOF","paymentAccepted":"Cash, Wave, Orange Money, MTN MoMo, Moov Money"}
+</script>
+</head>
+<body>
+<div id="bar"></div>
+<div id="ann" role="region" aria-label="Annonces"><div class="mq"><div class="mqt" id="annTrack"></div></div><button onclick="closeAnn()" aria-label="Fermer l'annonce">✕</button></div>
+<header><div class="wrap hbar">
+  <a href="#accueil" class="logo" aria-label="ADAM'S ET FRÈRES, accueil"><img src="images/logo.png" alt="Logo ADAM'S ET FRÈRES"><span>ADAM'S<small>et Frères</small></span></a>
+  <button class="burger" onclick="document.getElementById('nav').classList.toggle('open')" aria-label="Menu">☰</button>
+  <nav id="nav"></nav>
+  <button class="cartb" onclick="openCart()"><svg class="i" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg> Panier <b id="cartCount">0</b></button>
+</div></header>
+
+<main id="main">
+<section class="hero" data-tabs="accueil"><div class="wrap hg">
+  <div><span class="pill">Daoukro · à côté de la station Total</span>
+  <h1>Le smartphone qu'il vous faut, 100 % original</h1>
+  <p>iPhone, Samsung, Tecno, Infinix, téléviseurs, réfrigérateurs et climatiseurs. Produits scellés, garantie réelle et vérification devant vous avant de payer.</p>
+  <div class="row"><button class="btn lime" onclick="go('boutique')">Voir la boutique</button><button class="btn ghost-d" onclick="go('promotions')">Nos promotions</button></div></div>
+  <div class="hshot"><img src="images/iphone15_box.jpg" alt="iPhone neuf dans sa boîte devant l'enseigne Adam's"><span class="badge">Original · Scellé · Garanti</span></div>
+</div></section>
+
+<section class="trust" data-tabs="accueil"><div class="wrap">
+  <div><svg class="i" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg><span><b>Produits 100 % originaux</b>Scellés d'usine, vérifiés devant vous</span></div>
+  <div><svg class="i" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg><span><b>Garantie constructeur</b>Carlcare, Samsung, Apple et plus</span></div>
+  <div><svg class="i" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="18.5" cy="18.5" r="2"/></svg><span><b>Livraison à Daoukro</b>Rapide, à domicile ou en boutique</span></div>
+  <div><svg class="i" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg><span><b>Paiement mobile</b>Wave, Orange Money, MTN MoMo, Moov</span></div>
+</div></section>
+
+<section class="sec" data-tabs="accueil"><div class="wrap">
+  <div class="kick">Nos marques</div><h2>Les marques que vous cherchez</h2>
+  <p class="sub">Choisissez une marque pour voir toutes ses séries et ses prix.</p>
+  <div class="brands" id="homeBrands"></div>
+</div></section>
+
+<section class="sec white" data-tabs="accueil"><div class="wrap">
+  <div class="kick">Sélection vedette</div><h2>🔥 Nos produits populaires à Daoukro</h2>
+  <p class="sub">Les smartphones et équipements les plus demandés en boutique, avec garantie constructeur réelle.</p>
+  <div class="grid g4" id="popular"></div>
+  <p style="margin-top:20px"><button class="btn ghost sm" onclick="go('boutique')">Explorer toute la boutique</button></p>
+</div></section>
+
+<section class="sec" data-tabs="accueil promotions"><div class="wrap">
+  <div class="banner"><img src="images/promo_banner.jpg" alt="Spécial promo chez ADAM'S ET FRÈRES à Daoukro, commande au 07 07 10 34 97"><button class="btn lime" onclick="go('promotions');setPromo(true)">Voir les promotions</button></div>
+  <div class="grid g4" id="promoGrid" style="margin-top:24px"></div>
+</div></section>
+
+<section class="sec white" data-tabs="accueil galerie apropos"><div class="wrap">
+  <div class="kick">Notre boutique</div><h2>Passez nous voir à Daoukro</h2>
+  <p class="sub">Photos réelles de la boutique et de l'équipe.</p>
+  <div class="gal">
+    <img src="images/owner.jpg" alt="Le gérant dans la boutique Adam's" loading="lazy">
+    <img src="images/iphone_xr.jpg" alt="iPhone XR 64 Go en plusieurs coloris" loading="lazy">
+    <img src="images/iphone15_box.jpg" alt="iPhone neuf devant l'enseigne Adam's" loading="lazy">
+  </div>
+</div></section>
+
+<section class="sec anti" data-tabs="accueil apropos"><div class="wrap">
+  <div class="kick">Authenticité</div><h2>Reconnaître un vrai Tecno</h2>
+  <p class="sub">Les contrefaçons circulent. Voici les différences officielles publiées par Tecno, que nous vous montrons aussi en boutique.</p>
+  <div class="grid g3 afig">
+    <figure><img src="images/tecno_camon_back.jpg" alt="Tecno Camon 50 Pro : dos fraude à gauche, original à droite" loading="lazy"><figcaption>Camon 50 Pro : courbe plus étroite, couleur constante, aucune inscription inutile.</figcaption></figure>
+    <figure><img src="images/tecno_camon_box.jpg" alt="Boîte Camon 50 Pro : fraude à gauche, original à droite" loading="lazy"><figcaption>La boîte : la marque TECNO AI est visible et sans erreur.</figcaption></figure>
+    <figure><img src="images/tecno_spark.jpg" alt="Tecno Spark 50 : fraude à gauche, original à droite" loading="lazy"><figcaption>Spark 50 : bloc caméra à microtexture striée, marque TECNO uniquement.</figcaption></figure>
+  </div>
+</div></section>
+
+<section class="sec" data-tabs="accueil categories"><div class="wrap">
+  <div class="kick">Catalogue</div><h2>Parcourir par catégorie</h2>
+  <p class="sub">Toute la téléphonie et l'électroménager de la maison.</p>
+  <div class="grid g4" id="cats"></div>
+</div></section>
+
+<section class="sec white" data-tabs="boutique promotions categories" id="catalog"><div class="wrap">
+  <h2>La boutique</h2><p class="sub">Recherchez, filtrez et commandez.</p>
+  <div class="tools">
+    <input id="q" type="search" placeholder="Rechercher un produit ou une marque…" aria-label="Rechercher">
+    <select id="sort" aria-label="Trier"><option value="pop">Popularité</option><option value="asc">Prix croissant</option><option value="desc">Prix décroissant</option></select>
+  </div>
+  <div class="brands" id="brands"></div>
+  <div class="chips" id="series"></div>
+  <div class="chips" id="chips"></div>
+  <div class="grid g4" id="catalogGrid"></div>
+</div></section>
+
+<section class="sec" data-tabs="accueil apropos"><div class="wrap split">
+  <div><div class="kick">À propos</div><h2>ADAM'S ET FRÈRES, la confiance à Daoukro</h2>
+    <p class="sub" style="margin-bottom:0">Une boutique familiale installée au cœur de Daoukro. Nous vendons des produits originaux, expliqués et testés devant vous.</p>
+    <ul class="ticks"><li>Smartphones certifiés originaux, avec garantie</li><li>Électroménager adapté au climat et au réseau électrique local</li><li>Service après-vente réel, en boutique</li><li>Commande par WhatsApp, retrait ou livraison</li></ul>
+    <button class="btn" onclick="go('contact')">Nous contacter</button></div>
+  <img src="images/owner.jpg" alt="Équipe ADAM'S ET FRÈRES" loading="lazy">
+</div></section>
+
+<section class="sec white" data-tabs="accueil apropos"><div class="wrap">
+  <div class="kick">Avis clients</div><h2>Ils nous font confiance</h2><p class="sub">Achats vérifiés à Daoukro.</p>
+  <div class="grid g4" id="reviews"></div>
+</div></section>
+
+<section class="sec" data-tabs="accueil galerie contact"><div class="wrap split">
+  <div><div class="kick">Nous trouver</div><h2>Où nous rendre visite</h2>
+    <p class="sub" id="locTxt" style="margin-bottom:0"></p>
+    <p style="margin:16px 0"><a class="btn" id="mapBtn" target="_blank" rel="noopener">Ouvrir sur Google Maps</a></p></div>
+  <div><iframe title="Carte Daoukro" loading="lazy" src="https://www.google.com/maps?q=Daoukro+Cote+d'Ivoire&output=embed"></iframe></div>
+</div></section>
+
+<section class="sec white" data-tabs="contact"><div class="wrap split" style="align-items:start">
+  <div><div class="kick">Contact</div><h2>Une question ? Écrivez-nous</h2>
+    <div class="ci" style="margin-top:20px" id="ci"></div></div>
+  <form class="f" id="contactForm"><h3>Message rapide par WhatsApp</h3>
+    <label>Nom complet<input name="n" required></label><label>Téléphone<input name="t" type="tel" required></label>
+    <label>Votre message<textarea name="m" rows="4" required></textarea></label>
+    <button class="btn wa" type="submit">Envoyer sur WhatsApp</button></form>
+</div></section>
+
+</main>
+
+<footer><div class="wrap">
+  <div class="fg">
+    <div><img class="flogo" src="images/logo.png" alt="Logo ADAM'S ET FRÈRES"><p id="fTag"></p></div>
+    <div><h3>Navigation</h3><ul class="fl" id="fNav"></ul></div>
+    <div><h3>Horaires</h3><p id="fHours"></p></div>
+    <div><h3>Contact</h3><p id="fContact"></p></div>
+  </div>
+  <div class="pay"><span>Moyens de paiement acceptés</span><div class="pl">
+    <img src="images/paiements/wave.png" alt="Wave" loading="lazy"><img src="images/paiements/orange-money.png" alt="Orange Money" loading="lazy"><img src="images/paiements/mtn.png" alt="MTN MoMo" loading="lazy"><img src="images/paiements/moov-africa.png" alt="Moov Money" loading="lazy"><em>Espèces</em></div></div>
+  <div class="fb">© <span id="yr"></span> ADAM'S ET FRÈRES, Daoukro. Tous droits réservés.</div>
+</div></footer>
+
+<a class="fwa" id="fwa" target="_blank" rel="noopener"><svg class="i" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2-5.5A8.4 8.4 0 1 1 21 11.5z"/></svg> WhatsApp</a>
+
+<div class="ov" id="ov" onclick="closeAll()"></div>
+<aside class="drawer" id="drawer" aria-label="Panier">
+  <div class="dh"><h3>Votre panier</h3><button onclick="closeAll()" aria-label="Fermer">✕</button></div>
+  <div class="db" id="cartBody"></div>
+  <div class="df" id="cartFoot"></div>
+</aside>
+<div class="modal" id="modal" onclick="if(event.target===this)closeAll()"><div class="mbox" id="mbox"></div></div>
+<div class="toast" id="toast"></div>
+<script src="catalogue.js"></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script type="module" src="store.js"></script>
+</body>
+</html>

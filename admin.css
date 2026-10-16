@@ -1,0 +1,34 @@
+body.ad{background:#f4f3f3;min-height:100vh}
+.ah{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 8px 24px -22px rgba(0,0,0,.5)}
+.ahb{display:flex;align-items:center;justify-content:space-between;gap:16px;height:68px}
+.ahb .logo{display:flex;align-items:center;gap:12px;font-family:Poppins,sans-serif;font-weight:800}
+.ahb .logo img{width:44px;height:44px;border-radius:50%}.ahb .logo span{display:grid;line-height:1.05}.ahb .logo small{font:600 .68rem 'Plus Jakarta Sans',system-ui,sans-serif;color:var(--mut);margin-top:3px}
+.who{display:flex;align-items:center;gap:12px;font-size:.8rem;color:var(--mut)}.who span{max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+main.wrap{padding-top:28px;padding-bottom:80px}
+.note{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px;font-size:.88rem;margin-bottom:18px}.note.warn{background:#fff8e6;border-color:#f2c14e}
+.lg{max-width:440px;margin:40px auto;background:#fff;border:1px solid var(--line);border-radius:24px;padding:34px;box-shadow:0 30px 60px -40px rgba(0,0,0,.4)}
+.lg h1{font-size:1.6rem;margin-bottom:6px}.lg .sub{margin:0 0 22px}
+.err{color:#b91c1c;font-size:.85rem;font-weight:600;min-height:1.2em}
+.lnk{color:var(--em);font-size:.85rem;font-weight:600;text-align:center;padding:6px}.lnk:hover{text-decoration:underline}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px;align-items:center}
+.tabs button{padding:10px 18px;border-radius:999px;background:#fff;border:1px solid var(--line);font-weight:700;font-size:.85rem}.tabs button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tabs a{margin-left:auto;font-size:.85rem;font-weight:600;color:var(--em)}
+.panel h2{font-size:1.4rem;margin-bottom:16px}
+.bar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px}.bar input,.bar select{padding:12px 14px;border:1px solid var(--line);border-radius:12px;font:inherit;background:#fff}.bar input{flex:2;min-width:180px}.bar select{flex:1;min-width:140px}
+.cnt{font-size:.8rem;color:var(--mut);margin:0 0 14px}
+.ar{display:grid;grid-template-columns:64px 1fr auto;gap:8px 14px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px;margin-bottom:10px}
+.ar img{width:64px;height:64px;object-fit:cover;border-radius:12px;background:#f1f0f0}
+.ar .nm{font-weight:700;font-size:.9rem;line-height:1.25}.ar .nm small{display:block;font-weight:500;color:var(--mut);font-size:.75rem;margin-top:2px}
+.ar .ed{grid-column:1/-1;display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+.ar label{font-size:.7rem;font-weight:700;color:var(--mut);display:grid;gap:3px}.ar input[type=number]{width:120px;padding:9px 10px;border:1px solid var(--line);border-radius:10px;font:inherit;font-size:.9rem}
+.ar .stk{width:80px!important}.ar .btns{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap}
+.chp{padding:7px 12px;border-radius:99px;border:1px solid var(--line);font-size:.72rem;font-weight:700;color:var(--mut);background:#fff}.chp.on{background:#fdecec;border-color:#f0b9b9;color:var(--em2)}
+.btn.dg{background:#fff;color:#b91c1c;border:1px solid #f3c4c4;box-shadow:none}.btn.dg:hover{background:#fdecec}
+.box{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;margin-bottom:16px}.box h3{font-size:1rem;margin-bottom:6px}.box .sub{margin:0 0 14px}
+.cfm{max-width:640px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px}
+dialog{border:0;border-radius:24px;padding:0;width:min(640px,calc(100% - 24px));max-height:92vh;box-shadow:0 40px 90px -20px rgba(0,0,0,.6)}dialog::backdrop{background:rgba(11,11,16,.6);backdrop-filter:blur(3px)}
+dialog .f{padding:24px;gap:14px}.dh2{display:flex;justify-content:space-between;align-items:center}.dh2 h2{font-size:1.3rem}.x2{width:38px;height:38px;border-radius:50%;border:1px solid var(--line)}
+.chk{display:flex;gap:18px;flex-wrap:wrap}.chk label{display:flex;gap:8px;align-items:center;font-weight:600}.chk input{width:auto}
+#pv{width:120px;height:120px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+.acts{display:flex;gap:10px;justify-content:flex-end}
+@media(max-width:560px){.who span{display:none}.f .two{grid-template-columns:1fr}.ar{grid-template-columns:56px 1fr}.ar img{width:56px;height:56px}.ar .stat{grid-column:1/-1}}

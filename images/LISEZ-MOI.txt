@@ -1,0 +1,31 @@
+LOGOS (images/brands/, PNG) — manquants :
+
+PHOTOS PRODUITS (images/produits/, JPG) — manquantes :
+  infinix-smart-9.jpg -> Infinix Smart 9
+  infinix-hot-30.jpg -> Infinix Hot 30
+  infinix-hot-50i.jpg -> Infinix Hot 50i
+  infinix-note-40.jpg -> Infinix Note 40
+  tecno-pop-8.jpg -> Tecno Pop 8
+  tecno-camon-30.jpg -> Tecno Camon 30
+  tecno-pova-6-pro.jpg -> Tecno Pova 6 Pro
+  tecno-phantom-x2.jpg -> Tecno Phantom X2
+  apple-iphone-11.jpg -> Apple iPhone 11
+  apple-iphone-12.jpg -> Apple iPhone 12
+  apple-iphone-15.jpg -> Apple iPhone 15
+  samsung-galaxy-a05.jpg -> Samsung Galaxy A05
+  samsung-galaxy-a25-5g.jpg -> Samsung Galaxy A25 5G
+  samsung-galaxy-a35-5g.jpg -> Samsung Galaxy A35 5G
+  samsung-galaxy-s24.jpg -> Samsung Galaxy S24
+  samsung-galaxy-z-flip-5.jpg -> Samsung Galaxy Z Flip 5
+  samsung-galaxy-tab-a9.jpg -> Samsung Galaxy Tab A9
+  nasco-tv-led-32-hd.jpg -> Nasco TV LED 32'' HD
+  nasco-smart-tv-50-4k.jpg -> Nasco Smart TV 50'' 4K
+  nasco-smart-tv-55-4k.jpg -> Nasco Smart TV 55'' 4K
+  ilux-smart-tv-43-full-hd.jpg -> Ilux Smart TV 43'' Full HD
+  ilux-refrigerateur-combine.jpg -> Ilux Réfrigérateur combiné
+  ilux-congelateur-coffre.jpg -> Ilux Congélateur coffre
+  smart-cuisiniere-4-feux-gaz.jpg -> Smart Cuisinière 4 feux gaz
+  smart-bouilloire-inox.jpg -> Smart Bouilloire inox
+  smart-fer-a-repasser-vapeur.jpg -> Smart Fer à repasser vapeur
+
+images/a-classer/ : photos reçues dont le modèle exact reste à confirmer.
